@@ -156,40 +156,6 @@ Unlike sensitive permissions such as contacts or location, Internet permission d
 
 ---
 
-# 🌐 Web Service / API Used
-
-**API Name:** JSONPlaceholder
-
-**API URL:**
-
-```text
-https://jsonplaceholder.typicode.com/posts/1
-```
-
-**HTTP Method:** GET
-
-**Response Format:** JSON
-
-### Sample JSON Response
-
-```json
-{
-    "userId": 1,
-    "id": 1,
-    "title": "sunt aut facere repellat provident occaecati",
-    "body": "quia et suscipit suscipit recusandae"
-}
-```
-
-The application extracts the following information from the response:
-
-| JSON Field | Description |
-|---|---|
-| id | Post ID |
-| title | Post title |
-| body | Post description |
-
----
 
 # 🧪 Test Cases
 
