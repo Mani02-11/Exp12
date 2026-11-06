@@ -18,6 +18,7 @@ import java.util.concurrent.Executors
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var tvUrl: TextView
     private lateinit var btnFetchData: Button
     private lateinit var tvStatus: TextView
     private lateinit var tvResult: TextView
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        tvUrl = findViewById(R.id.tvUrl)
         btnFetchData = findViewById(R.id.btnFetchData)
         tvStatus = findViewById(R.id.tvStatus)
         tvResult = findViewById(R.id.tvResult)
@@ -51,6 +53,8 @@ class MainActivity : AppCompatActivity() {
         progressBar.visibility = View.VISIBLE
         btnFetchData.isEnabled = false
 
+        val urlString = tvUrl.text.toString()
+
         // Execute network operation in a background thread
         Executors.newSingleThreadExecutor().execute {
             var urlConnection: HttpURLConnection? = null
@@ -59,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
             try {
                 // Endpoint URL for HTTP GET request
-                val url = URL("https://jsonplaceholder.typicode.com/posts/1")
+                val url = URL(urlString)
 
                 // Step 4: Establish HTTP connection
                 urlConnection = url.openConnection() as HttpURLConnection

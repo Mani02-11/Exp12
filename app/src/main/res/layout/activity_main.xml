@@ -7,31 +7,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/bg_light"
-    android:padding="20dp"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
     <!-- Header Card -->
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="2dp"
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="3dp"
         app:cardBackgroundColor="@color/card_bg"
-        app:strokeWidth="0dp">
+        app:strokeWidth="1dp"
+        app:strokeColor="#CCCCCC">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="14dp">
 
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title_http_request"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/primary" />
 
@@ -39,10 +40,49 @@
                 android:id="@+id/tvSubtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="2dp"
                 android:text="@string/subtitle_http_request"
-                android:textSize="13sp"
+                android:textSize="14sp"
+                android:textStyle="bold"
                 android:textColor="@color/text_secondary" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Visible Web Service URL Section -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:cardBackgroundColor="#EBF3FA"
+        app:strokeWidth="1dp"
+        app:strokeColor="#90CAF9">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_target_url"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_secondary" />
+
+            <TextView
+                android:id="@+id/tvUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/default_url"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:textColor="@color/url_text" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -50,39 +90,39 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnFetchData"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="54dp"
         android:text="@string/btn_fetch_data"
-        android:textSize="15sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:textAllCaps="false"
         app:cornerRadius="12dp"
-        app:elevation="3dp"
-        android:layout_marginBottom="16dp" />
+        app:elevation="4dp"
+        android:layout_marginBottom="12dp" />
 
-    <!-- Status & Progress Container -->
+    <!-- Status Bar -->
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="1dp"
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp"
         app:cardBackgroundColor="@color/card_bg"
         app:strokeWidth="1dp"
-        app:strokeColor="#E0E0E0">
+        app:strokeColor="#CCCCCC">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:padding="12dp">
+            android:padding="10dp">
 
             <ProgressBar
                 android:id="@+id/progressBar"
                 style="?android:attr/progressBarStyleSmall"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginEnd="12dp"
+                android:layout_marginEnd="10dp"
                 android:visibility="gone"
                 android:indeterminateTint="@color/primary" />
 
@@ -92,11 +132,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/status_ready"
-                android:textSize="14sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 android:textColor="@color/status_ready_text"
                 android:background="@drawable/bg_status_badge"
-                android:paddingHorizontal="14dp"
+                android:paddingHorizontal="12dp"
                 android:paddingVertical="8dp" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
@@ -106,24 +146,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_response"
-        android:textSize="14sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         android:textColor="@color/text_primary"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="6dp" />
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:layout_marginBottom="12dp"
         app:cardCornerRadius="12dp"
-        app:cardElevation="2dp"
+        app:cardElevation="3dp"
         app:cardBackgroundColor="@color/code_bg"
-        app:strokeWidth="0dp">
+        app:strokeWidth="1dp"
+        app:strokeColor="#3E4451">
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp"
+            android:padding="14dp"
             android:fillViewport="true">
 
             <TextView
@@ -131,11 +173,51 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/initial_result_prompt"
-                android:textSize="13sp"
+                android:textSize="15sp"
+                android:textStyle="bold"
                 android:fontFamily="monospace"
-                android:lineSpacingExtra="4dp"
+                android:lineSpacingExtra="5dp"
                 android:textColor="@color/code_text" />
         </ScrollView>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Student Name & USN Footer Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardStudentInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="3dp"
+        app:cardBackgroundColor="@color/student_card_bg"
+        app:strokeWidth="1dp"
+        app:strokeColor="#81D4FA">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvStudentName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/student_name_label"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#01579B" />
+
+            <TextView
+                android:id="@+id/tvStudentUsn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/student_usn_label"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#01579B" />
+        </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

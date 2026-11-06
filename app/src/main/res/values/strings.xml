@@ -2,6 +2,8 @@
     <string name="app_name">Exp12</string>
     <string name="title_http_request">HTTP Web Service Request</string>
     <string name="subtitle_http_request">Experiment 12 • Asynchronous GET Request</string>
+    <string name="label_target_url">Target Web Service URL:</string>
+    <string name="default_url">https://jsonplaceholder.typicode.com/posts/1</string>
     <string name="btn_fetch_data">Fetch Data from Web Service</string>
     <string name="status_ready">Status: Ready</string>
     <string name="status_fetching">Status: Fetching data&#8230;</string>
@@ -9,7 +11,9 @@
     <string name="status_error">Status: Error Code %1$d</string>
     <string name="status_connection_error">Status: Connection Error</string>
     <string name="label_response">Server Response Output:</string>
-    <string name="initial_result_prompt">// Response data will be displayed here.\n// Click "Fetch Data from Web Service" to send request.</string>
+    <string name="initial_result_prompt">// Server response JSON will appear here.\n// Click "Fetch Data from Web Service" above.</string>
     <string name="connecting_to_server">Connecting to web service server&#8230;</string>
     <string name="server_returned_status">Server returned HTTP status code: %1$d</string>
+    <string name="student_name_label">Name: Manikandan P</string>
+    <string name="student_usn_label">USN: 25MCAR0186</string>
 </resources>
